@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+ <head> 
+  <title>student details</title> 
+  <link rel="shortcut icon" href="favricon.ico"> 
+  <style>
+  #btn1 {
+            width: 55px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        #btn1:hover {
+            background-color: green;
+            color: white;
+        }
+        
+        #btn2 {
+            width: 55px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        #btn2:hover {
+            background-color: blue;
+            color: white;
+        }
+        
+        #btn3 {
+            width: 55px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        #btn3:hover {
+            background-color: red;
+            color: white;
+        }
+         #btn4 {
+            width: 55px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        #btn4:hover {
+            background-color: gray;
+            color: black;
+        }
+         #btn5 {
+            width: 55px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        
+        #btn5:hover {
+            background-color: yellow;
+            color: black;
+        }
+        #h1{
+          color: Black;
+        }
+        #leg
+        {
+          color: Black;
+        }* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    background-image: url('IMG_20200615_083528.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.form {
+    font-style: inherit;
+    font-size: 24px;
+    height: -15px;
+    color: cornsilk;
+    vertical-align: middle;
+    width: 420px;
+    padding: 7% 0 0;
+    margin: auto;
+}
+
+.margin input {
+    height: 20px;
+    line-height: initial;
+    margin-left: 3cm;
+}
+
+.margin label {
+    position: absolute;
+}
+
+table {
+    top: 58%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    height: 30px;
+    width: 50%;
+    margin: 40px auto;
+    background-color: darkkhaki;
+}
+
+table,
+th,
+td {
+    border: 3px solid black;
+    padding: 5px auto;
+}
+
+th {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+td {
+    background-color: darkgrey;
+    text-align: center;
+    height: 25px;
+    font-size: 15px;
+    font-weight: auto;
+    font-family: georgia;
+}
+
+.caption {
+    color: black;
+    font-size: 24px;
+    font-weight: 800;
+    font-family: algerian;
+}
+
+.btn {
+    background-color: blue;
+    font-size: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    width: 80px;
+    height: 60px;
+    text-align: center;
+}
+</style>
+ </head> 
+ <body id="Bgc"> 
+  <form id="Forms" onclick="display(event)"> 
+   <fieldset> 
+    <legend>Enter Your Details:</legend> 
+    <label for="fname"> Name:</label> 
+    <input type="text" name="fname" id="fname"> 
+    <br> 
+    <br> 
+    <label for="regno">Register No:</label> 
+    <input type="text" name="regno" id="regno"> 
+    <br> 
+    <br> 
+    <label for="age">Age:</label> 
+    <input type="text" name="age" id="age"> 
+    <br> 
+    <br> 
+    <label for="gen">Gender:</label> 
+    <input type="text" name="gen" id="gen"> 
+    <br> 
+    <br> 
+    <label for="email">Email:</label> 
+    <input type="email" name="email" id="email"> 
+    <br> 
+    <br> 
+    <label for="pwd">password:</label> 
+    <input type="password" name="pwd" id="pwd"> 
+    <br> 
+    <br> 
+    <label for="ph">Phonenumber:</label> 
+    <input type="number" name="ph" id="ph"> 
+    <br> 
+    <br> 
+    <button onclick="Your Details are Submitted">Submit </button> 
+    <br> 
+   </fieldset> 
+  </form> 
+  <center> 
+   <div class="caption">
+     STUDENT DETAILS 
+   </div> 
+   <fieldset> 
+    <hr width="300"> 
+    <table id="myrow"> 
+     <tbody> 
+      <tr> 
+       <th width="15">Name</th> 
+       <th width="10">Register No</th> 
+       <th width="10">Age</th> 
+       <th width="10">Gender</th> 
+       <th width="25">Email</th> 
+       <th width="25">Phonenumber</th> 
+      </tr> 
+     </tbody> 
+    </table> 
+    <script type="text/javascript" >
+	var n=0;
+function Green()
+{
+  document.getElementById("Bgc").style.background="green";
+}
+function Blue()
+{
+  document.getElementById("Bgc").style.background="blue";
+}
+function Red()
+{
+  document.getElementById("Bgc").style.background="red";
+}
+function incre()
+{
+  n++;
+  document.getElementById("Bgc").style.background="yellow";
+  
+  document.getElementById("id").innerHTML=n;
+}
+function Decre()
+{
+n--;
+document.getElementById("Bgc").style.background="grey";
+document.getElementById("id").innerHTML=n;
+}
+function display(event) {
+    event.preventDefault();
+    var form = document.getElementById("Forms")
+    var fname = document.getElementById("fname").value;;
+    var regno = document.getElementById("regno").value;;
+    var age = document.getElementById("age").value;;
+    var gen = document.getElementById("gen").value;;
+    var email = document.getElementById("email").value;;
+    var ph = document.getElementById("ph").value;;
+    var table = document.getElementById("myrow");
+    var row = table.insertRow(1);
+    if (!fname || !regno || !gen ||!email || !ph) {
+        alert("Please fill all the boxes");
+        return;
+    }
+
+    var cell1 = row.insertCell(0);
+    cell1.innerHTML = fname;
+    var cell2 = row.insertCell(1);
+    cell2.innerHTML = regno;
+    var cell3 = row.insertCell(2);
+    cell3.innerHTML = age;
+    var cell4 = row.insertCell(3);
+    cell4.innerHTML = gen;
+    var cell5 = row.insertCell(4);
+    cell5.innerHTML = email;
+    var cell6 = row.insertCell(5);
+    cell6.innerHTML = ph;
+    form.reset();
+    console.log("hello");
+}
+    </script> 
+   </fieldset> 
+  </center> 
+  <h1 id="h1">Background colour change</h1> 
+  <fieldset> 
+   <legend id="leg">Click Your Favo Colour Button</legend> 
+   <center> 
+    <button id="btn1" onclick="Green()">Green</button> 
+    <br> 
+    <br> 
+   </center> 
+   <center> 
+    <button id="btn2" onclick="Blue()">Blue</button> 
+    <br> 
+    <br> 
+   </center> 
+   <center> 
+    <button id="btn3" onclick="Red()">Red</button> 
+    <br> 
+    <br> 
+   </center> 
+   <center> 
+    <button id="btn4" onclick="Decre()"> - </button> 
+    <label id="id">0</label> 
+    <button id="btn5" onclick="incre()"> +</button> 
+    <br> 
+    <br> 
+   </center> 
+  </fieldset> 
+ </body>
+</html>
